@@ -38,6 +38,7 @@ namespace ERP3
 
         public bool logado = false;
         public string usuario;
+        public int ativo;
 
         public frmLogin()
         {
@@ -69,8 +70,15 @@ namespace ERP3
 
                 if (v > 0)
                 {
-                   //MessageBox.Show("Logado com sucesso!");
+                    //MessageBox.Show("Logado com sucesso!");
+                    SqlConn.Close();
                     logado = true;
+                    string sql = "select ativo from mnt_usuarios WHERE usuario = @usuario";
+                    SqlCommand cmd1 = new SqlCommand(sql, SqlConn);
+                    cmd1.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usu;
+                    SqlConn.Open();
+
+                    ativo = c ;
                     usuario = usu;
                     usuario = usuario.ToUpper();
                     this.Dispose();
