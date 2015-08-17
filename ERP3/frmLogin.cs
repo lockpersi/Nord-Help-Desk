@@ -38,7 +38,7 @@ namespace ERP3
 
         public bool logado = false;
         public string usuario;
-        public int ativo;
+        public string ativo;
 
         public frmLogin()
         {
@@ -78,7 +78,7 @@ namespace ERP3
                     cmd1.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usu;
                     SqlConn.Open();
 
-                    ativo = c ;
+                    ativo = cmd1.ExecuteScalar().ToString();
                     usuario = usu;
                     usuario = usuario.ToUpper();
                     this.Dispose();

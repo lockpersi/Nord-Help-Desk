@@ -62,7 +62,7 @@ namespace ERP3
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }

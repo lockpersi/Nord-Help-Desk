@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizaLicencaBLL.cs" />
     <Compile Include="CadastroClienteBLL.cs" />
     <Compile Include="CadastroProdutosBLL.cs" />
     <Compile Include="ControleVendasBLL.cs" />

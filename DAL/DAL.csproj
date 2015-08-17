@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizaLicencaDAL.cs" />
     <Compile Include="CadastroClientesDAL.cs" />
     <Compile Include="CadastroProdutosDAL.cs" />
     <Compile Include="ControleVendasDAL.cs" />

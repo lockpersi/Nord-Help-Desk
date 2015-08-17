@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FirebirdSql.Data.FirebirdClient;
 
 namespace ERP3{
     
@@ -22,11 +21,20 @@ namespace ERP3{
             frmLogin frmLogin = new frmLogin();
 
             frmLogin.ShowDialog();
+            string opc = "False";
 
-            if (frmLogin.logado)
+            if (frmLogin.ativo.Equals(opc))
             {
-                Application.Run(new frmPrincipal(frmLogin.usuario));
+                frmInserirSenha frmInserirSenha = new frmInserirSenha();
+                frmInserirSenha.ShowDialog();
             }
+            else
+            { 
+                if (frmLogin.logado)
+                {
+                    Application.Run(new frmPrincipal(frmLogin.usuario));
+                }
+            } 
         }
     }
 }
