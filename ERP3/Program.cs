@@ -23,11 +23,15 @@ namespace ERP3{
             frmLogin.ShowDialog();
             string opc = "False";
 
-            if (frmLogin.ativo.Equals(opc))
-            {
+
+                if (frmLogin.ativo.Equals(opc))
+                {
                 frmInserirSenha frmInserirSenha = new frmInserirSenha();
+
                 frmInserirSenha.ShowDialog();
-            }
+
+                }
+            
             else
             { 
                 if (frmLogin.logado)

@@ -12,5 +12,18 @@ namespace NORD.DAL
 {
    public class AtualizaLicencaDAL
     {
+        public void atualiza(AtualizaLicenca atualiza)
+        {
+            //conexao
+            SqlConnection cn = new SqlConnection();
+            cn.ConnectionString = Dados.StringDeConexao;
+            SqlCommand cmd = new SqlCommand();
+            //dados
+            cmd.Connection = cn;
+
+
+
+
+        }
     }
 }

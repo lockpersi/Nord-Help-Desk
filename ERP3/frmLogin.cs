@@ -42,8 +42,14 @@ namespace ERP3
 
         public frmLogin()
         {
-            InitializeComponent();
-            UpdateTextPosition();
+            try {
+                InitializeComponent();
+                UpdateTextPosition();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void logar()
@@ -108,12 +114,24 @@ namespace ERP3
 
         private void bt_logar_Click(object sender, EventArgs e)
         {
-            logar();
+                logar();
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F10:
+                    frmInserirSenha frmInserirSenha = new frmInserirSenha();
+                    frmInserirSenha.ShowDialog();
+                    break;
+
+            }
         }
     }
 }
