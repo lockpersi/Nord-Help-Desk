@@ -49,9 +49,9 @@ namespace ERP3
             try
             {
                 CadastroCliente cliente = new CadastroCliente();
-                cliente.Nome = tb_nome.Text;
+                //cliente.Nome = tb_nome.Text;
                 cliente.Email = tb_email.Text;
-                cliente.Telefone = tb_telefone.Text;
+                cliente.Telefone = tb_nome.Text;
                 cliente.Empresa = cb_empresa.Text;
                 CadastroClienteBLL obj = new CadastroClienteBLL();
                 obj.Incluir(cliente);
@@ -77,6 +77,97 @@ namespace ERP3
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCodigo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsb_novo_Click(object sender, EventArgs e)
+        {
+            tb_codigo.ReadOnly = true;
+            tb_codigo.Text = "";
+            tb_nome.Text = "";
+            cb_empresa.Text = "";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(tb_codigo.Text.Trim().Length == 0)
+                {
+                    throw new Exception("Codigo é obrigatório !");
+                }
+                CadastroCliente cliente = new CadastroCliente();
+                cliente.Id_cliente = Convert.ToInt32(tb_codigo.Text);
+                CadastroClienteBLL obj = new CadastroClienteBLL();
+                obj.Pesquisa(cliente);
+                tb_nome.Text = cliente.Nome;
+                tb_codigo.Text = cliente.Id_cliente.ToString();
+                tb_codigo.ReadOnly = true;
+             }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tb_codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != 8))
+
+            {
+
+                e.Handled = true;
+                 
+            }
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

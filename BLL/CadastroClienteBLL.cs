@@ -44,5 +44,13 @@ namespace NORD.BLL
             CadastroClientesDAL obj = new CadastroClientesDAL();
             return obj.Listagem();
         }
+
+        public CadastroCliente Pesquisa(CadastroCliente cliente)
+        {
+            CadastroClientesDAL obj = new CadastroClientesDAL();
+            obj.Pesquisar(cliente);
+            
+            return cliente;
+        }
     }
 }

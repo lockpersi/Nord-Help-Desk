@@ -32,10 +32,6 @@ namespace ERP3
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.aDMINISTRARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,8 +48,8 @@ namespace ERP3
             this.cONTROLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPRESAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,40 +64,6 @@ namespace ERP3
             this.menuStrip1.Size = new System.Drawing.Size(784, 94);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton,
-            this.toolStripSeparator1,
-            this.toolStripButton1});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 94);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(784, 25);
-            this.fillByToolStrip.TabIndex = 5;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // aDMINISTRARToolStripMenuItem
             // 
@@ -140,7 +102,8 @@ namespace ERP3
             this.cADASTROToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cLIENTEToolStripMenuItem,
             this.pRODUTOSToolStripMenuItem,
-            this.hELPDESKToolStripMenuItem});
+            this.hELPDESKToolStripMenuItem,
+            this.eMPRESAToolStripMenuItem});
             this.cADASTROToolStripMenuItem.Image = global::ERP3.Properties.Resources._1439629284_1_1;
             this.cADASTROToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cADASTROToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -156,7 +119,7 @@ namespace ERP3
             this.nOVOCLIENTEToolStripMenuItem,
             this.aLTERARCADASTROToolStripMenuItem});
             this.cLIENTEToolStripMenuItem.Name = "cLIENTEToolStripMenuItem";
-            this.cLIENTEToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.cLIENTEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cLIENTEToolStripMenuItem.Text = "CLIENTE";
             // 
             // nOVOCLIENTEToolStripMenuItem
@@ -178,9 +141,8 @@ namespace ERP3
             this.nOVARATToolStripMenuItem,
             this.aLTERARRATToolStripMenuItem});
             this.pRODUTOSToolStripMenuItem.Name = "pRODUTOSToolStripMenuItem";
-            this.pRODUTOSToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.pRODUTOSToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pRODUTOSToolStripMenuItem.Text = "RAT";
-            this.pRODUTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUTOSToolStripMenuItem_Click);
             // 
             // nOVARATToolStripMenuItem
             // 
@@ -200,7 +162,7 @@ namespace ERP3
             this.nOVOCHAMADOToolStripMenuItem,
             this.aLTERARCHAMADOToolStripMenuItem});
             this.hELPDESKToolStripMenuItem.Name = "hELPDESKToolStripMenuItem";
-            this.hELPDESKToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.hELPDESKToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hELPDESKToolStripMenuItem.Text = "HELP DESK";
             // 
             // nOVOCHAMADOToolStripMenuItem
@@ -247,12 +209,18 @@ namespace ERP3
             this.rATToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.rATToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // eMPRESAToolStripMenuItem
+            // 
+            this.eMPRESAToolStripMenuItem.Name = "eMPRESAToolStripMenuItem";
+            this.eMPRESAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eMPRESAToolStripMenuItem.Text = "EMPRESA";
+            this.eMPRESAToolStripMenuItem.Click += new System.EventHandler(this.eMPRESAToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -263,8 +231,6 @@ namespace ERP3
             this.Load += new System.EventHandler(this.principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,11 +254,8 @@ namespace ERP3
         private System.Windows.Forms.ToolStripMenuItem hELPDESKToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nOVOCHAMADOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aLTERARCHAMADOToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem rATToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eMPRESAToolStripMenuItem;
     }
 }
 

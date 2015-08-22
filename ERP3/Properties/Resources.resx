@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="NORD_4_LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NORD_4_LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1439678727_maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1439678727_maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1439595254_administrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1439595254_administrator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,8 +127,14 @@
   <data name="1439608624_user-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1439608624_user-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1440109443_system-search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1440109443_system-search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1439629284_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1439629284_1_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login - imagem fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login - imagem fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1439629946_database-gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1439629946_database-gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,10 +145,13 @@
   <data name="1439608732_exit_thin_output" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1439608732_exit_thin_output.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login - imagem fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login - imagem fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1440129305_Add-Male-User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1440129305_Add-Male-User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1439678727_maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1439678727_maintenance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NORD_4_LOGO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NORD_4_LOGO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1440129383_Add-Male-User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1440129383_Add-Male-User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

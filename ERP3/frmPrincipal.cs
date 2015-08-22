@@ -45,15 +45,6 @@ namespace ERP3
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void principal_Load(object sender, EventArgs e)
         {
 
@@ -74,47 +65,26 @@ namespace ERP3
 
         private void nOVOCLIENTEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           
             frmCadastroCliente obj = new frmCadastroCliente();
             obj.MdiParent = MdiParent;
+            obj.TopLevel = true;
+            obj.AutoScroll = true;
             //this.Enabled = false;
             obj.ShowDialog();
-            //this.Enabled = true; 
+            
 
         }
 
-        private void pRODUTOSToolStripMenuItem_Click(object sender, EventArgs e)
+        private void eMPRESAToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmCadastroEmpresa obj = new frmCadastroEmpresa();
+            obj.MdiParent = MdiParent;
+            obj.TopLevel = true;
+            obj.AutoScroll = true;
+            //this.Enabled = false;
+            obj.ShowDialog();
 
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nordDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
-                    }
     }
 }

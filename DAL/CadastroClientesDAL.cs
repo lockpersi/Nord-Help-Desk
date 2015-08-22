@@ -115,5 +115,49 @@ namespace NORD.DAL
             da.Fill(tabela);
             return tabela;
         }
+
+        public CadastroCliente Pesquisar(CadastroCliente cliente)
+        {
+            //conexao
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Dados.StringDeConexao;
+                //command
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = "select id_cliente, nome, empresa from cdt_clientes where id_cliente = @id_cliente";
+                cmd.Parameters.AddWithValue("@id_cliente", cliente.Id_cliente);
+                cn.Open();
+                //instância do leitor
+                 
+                SqlDataReader leitor = cmd.ExecuteReader();
+
+                //enquanto leitor lê 
+                while (leitor.Read())
+                {
+                    //passo os valores para o objeto cliente 
+                    //que será retornado 
+                    cliente.Id_cliente = Convert.ToInt32(leitor["id_cliente"].ToString());
+                    cliente.Nome = leitor["nome"].ToString();
+                    cliente.Empresa = leitor["empresa"].ToString();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Servidor SQL Erro:" + ex.Number);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return cliente;
+        }
     }
 }
