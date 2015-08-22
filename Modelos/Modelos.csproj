@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtualizaLicenca.cs" />
     <Compile Include="CadastroCliente.cs" />
     <Compile Include="CadastroProduto.cs" />
+    <Compile Include="ConsultaCNPJ.cs" />
     <Compile Include="ControleVenda.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessaoUsuario.cs" />
   </ItemGroup>

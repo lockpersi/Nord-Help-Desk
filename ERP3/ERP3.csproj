@@ -58,13 +58,9 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=4.7.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework\FirebirdSql.Data.FirebirdClient.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,11 +79,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CadastroClienteEmpresa.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaCNPJBLL.cs" />
     <Compile Include="frmCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCadastroCliente.Designer.cs">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadastroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroEmpresa.Designer.cs">
+      <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaReceita.Designer.cs">
+      <DependentUpon>frmConsultaReceita.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInserirSenha.cs">
       <SubType>Form</SubType>
@@ -111,6 +120,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadastroCliente.resx">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroEmpresa.resx">
+      <DependentUpon>frmCadastroEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaReceita.resx">
+      <DependentUpon>frmConsultaReceita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInserirSenha.resx">
       <DependentUpon>frmInserirSenha.cs</DependentUpon>
@@ -142,7 +157,8 @@
     <None Include="CadastroClienteEmpresa.xss">
       <DependentUpon>CadastroClienteEmpresa.xsd</DependentUpon>
     </None>
-    <None Include="ERP3_ChaveTemporária.pfx" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -207,6 +223,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1439678727_maintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440109443_system-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440129305_Add-Male-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440129383_Add-Male-User.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

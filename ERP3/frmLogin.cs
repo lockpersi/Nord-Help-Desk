@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using NORD.Modelos;
+using NORD.BLL;
 
 namespace ERP3
 {
     public partial class frmLogin : Form
     {
+        public bool logado = false;
         private void UpdateTextPosition()
         {
             Graphics g = this.CreateGraphics();
@@ -30,70 +32,39 @@ namespace ERP3
 
             this.Text = tmp + this.Text.Trim();
         }
+        
 
-        SqlConnection SqlConn = null;
-        private string strConn = @"Data Source=SQL5016.Smarterasp.net;Initial Catalog=DB_9D62CD_nord;User ID=DB_9D62CD_nord_admin;Password=1598741a";
-        private string _Sql = string.Empty;
-
-
-        public bool logado = false;
-        public string usuario;
-        public int ativo;
+        public string ativo;
 
         public frmLogin()
         {
-            InitializeComponent();
-            UpdateTextPosition();
+            try {
+                InitializeComponent();
+                UpdateTextPosition();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void logar()
         {
-      
-            string usu, pwd;
 
-            SqlConn = new SqlConnection(strConn);
             try
             {
-                usu = tb_usuario.Text;
-                pwd = tb_senha.Text;
-
-                _Sql = "SELECT COUNT(id_usuario) FROM mnt_usuarios WHERE usuario = @usuario AND senha = @senha";
-
-                SqlCommand cmd = new SqlCommand(_Sql, SqlConn);
-
-                cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usu;
-                cmd.Parameters.Add("@senha", SqlDbType.VarChar).Value = pwd;
-
-                SqlConn.Open();
-
-                int v = (int)cmd.ExecuteScalar();
-
-                if (v > 0)
-                {
-                    //MessageBox.Show("Logado com sucesso!");
-                    SqlConn.Close();
-                    logado = true;
-                    string sql = "select ativo from mnt_usuarios WHERE usuario = @usuario";
-                    SqlCommand cmd1 = new SqlCommand(sql, SqlConn);
-                    cmd1.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usu;
-                    SqlConn.Open();
-
-                    ativo = c ;
-                    usuario = usu;
-                    usuario = usuario.ToUpper();
-                    this.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao logar, verifique seu login e senha !!");
-                    logado = false;
-           
-                }
+                Login login = new Login();
+                login.Usu = tb_usuario.Text;
+                login.Pwd = tb_senha.Text;
+                LoginBLL LoginBLL = new LoginBLL();
+                LoginBLL.validar(login);
+                logado = true;
+                this.Close();
 
             }
-            catch (SqlException erooo)
+            catch (Exception ex)
             {
-                MessageBox.Show(erooo+"No banco");
+                MessageBox.Show(ex.Message);
             }
         }
        
@@ -114,6 +85,18 @@ namespace ERP3
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F10:
+                    frmInserirSenha frmInserirSenha = new frmInserirSenha();
+                    frmInserirSenha.ShowDialog();
+                    break;
+
+            }
         }
     }
 }

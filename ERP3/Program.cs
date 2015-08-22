@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FirebirdSql.Data.FirebirdClient;
+using NORD.BLL;
+using NORD.DAL;
+using NORD.Modelos;
 
 namespace ERP3{
     
@@ -15,7 +17,8 @@ namespace ERP3{
         [STAThread]
         static void Main()
         {
-
+            
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -25,8 +28,8 @@ namespace ERP3{
 
             if (frmLogin.logado)
             {
-                Application.Run(new frmPrincipal(frmLogin.usuario));
-            }
+                Application.Run(new frmPrincipal());
+                }
+            } 
         }
     }
-}
