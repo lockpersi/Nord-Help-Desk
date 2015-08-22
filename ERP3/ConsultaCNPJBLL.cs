@@ -19,20 +19,30 @@ namespace ERP3
             private String paginaPrincipal = "cnpjreva_solicitacao2.asp";
             private String paginaCaptcha = "captcha/gerarCaptcha.asp";
 
-        
 
-            public Bitmap GetCaptcha()
-            {
-                String htmlResult;
+
+        public Bitmap GetCaptcha()
+        {
+
+            String htmlResult;
+         
                 using (var wc = new CookieAwareWebClient())
+                {
+                try
                 {
                     wc.SetCookieContainer(_cookies);
                     wc.Headers[HttpRequestHeader.UserAgent] = "Mozilla/4.0 (compatible; Synapse)";
                     wc.Headers[HttpRequestHeader.KeepAlive] = "300";
                     htmlResult = wc.DownloadString(urlBaseReceitaFederal + paginaPrincipal);
                 }
+                catch
+                {
+                    throw new Exception("Tempo limite de pesquisa atingido !");
+                }
+            }
                 if (htmlResult.Length > 0)
                 {
+                try {
                     var wc2 = new CookieAwareWebClient();
                     wc2.SetCookieContainer(_cookies);
                     wc2.Headers[HttpRequestHeader.UserAgent] = "Mozilla/4.0 (compatible; Synapse)";
@@ -40,9 +50,16 @@ namespace ERP3
                     byte[] data = wc2.DownloadData(urlBaseReceitaFederal + paginaCaptcha);
                     return new Bitmap(new MemoryStream(data));
                 }
-                return null;
-            }
+                catch
+                {
+                    throw new Exception("Tempo limite de pesquisa atingido !");
+                }
+                }
 
+                return null;
+
+            
+            }
             public String Consulta(string aCNPJ, string aCaptcha)
             {
                 var request = (HttpWebRequest)WebRequest.Create(urlBaseReceitaFederal + paginaValidacao);

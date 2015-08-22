@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.gb_codigocnpj = new System.Windows.Forms.GroupBox();
+            this.pb_pesquisa2 = new System.Windows.Forms.PictureBox();
             this.tb_cnpj = new System.Windows.Forms.TextBox();
+            this.pb_pesquisa1 = new System.Windows.Forms.PictureBox();
             this.tb_codigo = new System.Windows.Forms.TextBox();
             this.lb_cnpj = new System.Windows.Forms.Label();
             this.lb_codigo = new System.Windows.Forms.Label();
-            this.pb_pesquisa2 = new System.Windows.Forms.PictureBox();
-            this.pb_pesquisa1 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.gb_codigocnpj.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_pesquisa2)).BeginInit();
@@ -52,6 +52,15 @@
             this.toolStrip1.Size = new System.Drawing.Size(784, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::ERP3.Properties.Resources._1440129383_Add_Male_User;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // gb_codigocnpj
             // 
@@ -69,12 +78,31 @@
             this.gb_codigocnpj.TabStop = false;
             this.gb_codigocnpj.Text = "CODIGO/CNPJ";
             // 
+            // pb_pesquisa2
+            // 
+            this.pb_pesquisa2.Image = global::ERP3.Properties.Resources._1440109443_system_search;
+            this.pb_pesquisa2.Location = new System.Drawing.Point(544, 29);
+            this.pb_pesquisa2.Name = "pb_pesquisa2";
+            this.pb_pesquisa2.Size = new System.Drawing.Size(25, 25);
+            this.pb_pesquisa2.TabIndex = 4;
+            this.pb_pesquisa2.TabStop = false;
+            this.pb_pesquisa2.Click += new System.EventHandler(this.pb_pesquisa2_Click);
+            // 
             // tb_cnpj
             // 
             this.tb_cnpj.Location = new System.Drawing.Point(362, 29);
             this.tb_cnpj.Name = "tb_cnpj";
             this.tb_cnpj.Size = new System.Drawing.Size(176, 25);
             this.tb_cnpj.TabIndex = 3;
+            // 
+            // pb_pesquisa1
+            // 
+            this.pb_pesquisa1.Image = global::ERP3.Properties.Resources._1440109443_system_search;
+            this.pb_pesquisa1.Location = new System.Drawing.Point(174, 29);
+            this.pb_pesquisa1.Name = "pb_pesquisa1";
+            this.pb_pesquisa1.Size = new System.Drawing.Size(25, 25);
+            this.pb_pesquisa1.TabIndex = 5;
+            this.pb_pesquisa1.TabStop = false;
             // 
             // tb_codigo
             // 
@@ -101,34 +129,6 @@
             this.lb_codigo.TabIndex = 0;
             this.lb_codigo.Text = "CÓDIGO:";
             // 
-            // pb_pesquisa2
-            // 
-            this.pb_pesquisa2.Image = global::ERP3.Properties.Resources._1440109443_system_search;
-            this.pb_pesquisa2.Location = new System.Drawing.Point(544, 29);
-            this.pb_pesquisa2.Name = "pb_pesquisa2";
-            this.pb_pesquisa2.Size = new System.Drawing.Size(25, 25);
-            this.pb_pesquisa2.TabIndex = 4;
-            this.pb_pesquisa2.TabStop = false;
-            this.pb_pesquisa2.Click += new System.EventHandler(this.pb_pesquisa2_Click);
-            // 
-            // pb_pesquisa1
-            // 
-            this.pb_pesquisa1.Image = global::ERP3.Properties.Resources._1440109443_system_search;
-            this.pb_pesquisa1.Location = new System.Drawing.Point(174, 29);
-            this.pb_pesquisa1.Name = "pb_pesquisa1";
-            this.pb_pesquisa1.Size = new System.Drawing.Size(25, 25);
-            this.pb_pesquisa1.TabIndex = 5;
-            this.pb_pesquisa1.TabStop = false;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::ERP3.Properties.Resources._1440129383_Add_Male_User;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
             // frmCadastroEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +139,7 @@
             this.Name = "frmCadastroEmpresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Empresa";
+            this.Load += new System.EventHandler(this.frmCadastroEmpresa_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.gb_codigocnpj.ResumeLayout(false);

@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaReceita));
             this.picLetras = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tb_letras = new System.Windows.Forms.TextBox();
             this.tb_cnpj = new System.Windows.Forms.TextBox();
             this.lb_cnpj = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.bt_consultar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLetras)).BeginInit();
@@ -45,7 +45,7 @@
             // 
             this.picLetras.Location = new System.Drawing.Point(42, 76);
             this.picLetras.Name = "picLetras";
-            this.picLetras.Size = new System.Drawing.Size(166, 77);
+            this.picLetras.Size = new System.Drawing.Size(185, 77);
             this.picLetras.TabIndex = 0;
             this.picLetras.TabStop = false;
             this.picLetras.Click += new System.EventHandler(this.picLetras_Click);
@@ -64,6 +64,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta CNPJ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "CAPTCHA:";
             // 
             // tb_letras
             // 
@@ -88,16 +98,6 @@
             this.lb_cnpj.Size = new System.Drawing.Size(54, 17);
             this.lb_cnpj.TabIndex = 0;
             this.lb_cnpj.Text = "CNPJ:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 162);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "CAPTCHA:";
             // 
             // bt_consultar
             // 

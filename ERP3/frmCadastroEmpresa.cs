@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NORD.Modelos;
+using NORD.BLL;
 
 namespace ERP3
 {
@@ -28,6 +29,11 @@ namespace ERP3
         {
             tb_codigo.ReadOnly = true;
             tb_cnpj.Text = empresa.Cnpj;
+        }
+
+        private void frmCadastroEmpresa_Load(object sender, EventArgs e)
+        {
+           // tb_cnpj. = CadastroEmpresaBLL.MascaraCnpjCpf(tb_cnpj.Text);
         }
     }
 }

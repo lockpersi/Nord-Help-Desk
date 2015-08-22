@@ -22,18 +22,25 @@ namespace ERP3
 
         public void carregarCaptcha()
         {
-            consulta = new ConsultaCNPJBLL();
-            tb_letras.Text = "";
-            tb_letras.Focus();
-            Cursor cursor;
-            cursor = this.Cursor;
-            this.Cursor = Cursors.WaitCursor;
-            Bitmap bit = consulta.GetCaptcha();
-            if (bit != null)
-                picLetras.Image = bit;
-            else
-                MessageBox.Show("Não foi possível recuperar a imagem de validação do site da Receita Federal");
-            this.Cursor = cursor;
+            try {
+                consulta = new ConsultaCNPJBLL();
+                tb_letras.Text = "";
+                tb_letras.Focus();
+                Cursor cursor;
+                cursor = this.Cursor;
+                this.Cursor = Cursors.WaitCursor;
+                Bitmap bit = consulta.GetCaptcha();
+                if (bit != null)
+                    picLetras.Image = bit;
+                else
+                    MessageBox.Show("Não foi possível recuperar a imagem de validação do site da Receita Federal");
+                this.Cursor = cursor;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private enum Coluna
         {
@@ -270,7 +277,9 @@ namespace ERP3
             try
             {
                 this.Cursor = Cursors.WaitCursor;
-                string tmp = consulta.Consulta(tb_cnpj.Text, tb_letras.Text);
+                string cnpj1 = tb_cnpj.Text;
+                cnpj1 = String.Format(@"{0:00\.000\.000\/0000\-00}", cnpj1);
+                string tmp = consulta.Consulta(cnpj1, tb_letras.Text);
 
                 if (tmp.Length > 0)
                 {
