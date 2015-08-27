@@ -60,7 +60,13 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Final|AnyCPU'">
+    <OutputPath>bin\Final\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\..\..\Desktop\Nord\VS Project\Launcher v2\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -232,6 +238,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1440129383_Add-Male-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440457539_Add-Male-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440457656_Add-Male-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440529178_Remove-Male-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440529338_Edit-Male-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440529538_Accept-Male-User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1440529625_Male-User-Help.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

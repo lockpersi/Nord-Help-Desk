@@ -36,6 +36,9 @@
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.bt_logar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.downloadLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +79,7 @@
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(152, 186);
+            this.bt_cancelar.Location = new System.Drawing.Point(152, 227);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(75, 29);
             this.bt_cancelar.TabIndex = 4;
@@ -86,7 +89,7 @@
             // 
             // bt_logar
             // 
-            this.bt_logar.Location = new System.Drawing.Point(35, 183);
+            this.bt_logar.Location = new System.Drawing.Point(35, 224);
             this.bt_logar.Name = "bt_logar";
             this.bt_logar.Size = new System.Drawing.Size(100, 34);
             this.bt_logar.TabIndex = 5;
@@ -104,12 +107,36 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(35, 177);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(192, 23);
+            this.progressBar1.TabIndex = 7;
+            // 
+            // downloadLbl
+            // 
+            this.downloadLbl.AutoSize = true;
+            this.downloadLbl.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.downloadLbl.Location = new System.Drawing.Point(83, 206);
+            this.downloadLbl.Name = "downloadLbl";
+            this.downloadLbl.Size = new System.Drawing.Size(0, 13);
+            this.downloadLbl.TabIndex = 8;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 248);
+            this.ClientSize = new System.Drawing.Size(259, 267);
             this.ControlBox = false;
+            this.Controls.Add(this.downloadLbl);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.bt_logar);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.tb_senha);
@@ -128,6 +155,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NORD - CONTROLE DE RAT";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogin_KeyDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,5 +171,8 @@
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.Button bt_logar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label downloadLbl;
     }
 }

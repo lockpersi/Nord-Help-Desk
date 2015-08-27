@@ -153,6 +153,66 @@ namespace ERP3.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1440457539_Add_Male_User {
+            get {
+                object obj = ResourceManager.GetObject("1440457539_Add-Male-User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1440457656_Add_Male_User {
+            get {
+                object obj = ResourceManager.GetObject("1440457656_Add-Male-User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1440529178_Remove_Male_User {
+            get {
+                object obj = ResourceManager.GetObject("1440529178_Remove-Male-User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1440529338_Edit_Male_User {
+            get {
+                object obj = ResourceManager.GetObject("1440529338_Edit-Male-User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1440529538_Accept_Male_User {
+            get {
+                object obj = ResourceManager.GetObject("1440529538_Accept-Male-User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1440529625_Male_User_Help {
+            get {
+                object obj = ResourceManager.GetObject("1440529625_Male-User-Help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clients {
             get {
                 object obj = ResourceManager.GetObject("clients", resourceCulture);

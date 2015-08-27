@@ -12,12 +12,30 @@ namespace ERP3
 {
     public partial class frmConsultaReceita : Form
     {
-        
+
         public ConsultaCNPJ empresa;
         private ConsultaCNPJBLL consulta;
         public frmConsultaReceita()
         {
             InitializeComponent();
+            UpdateTextPosition();
+        }
+
+        private void UpdateTextPosition()
+        {
+            Graphics g = this.CreateGraphics();
+            Double startingPoint = (this.Width / 2) - (g.MeasureString(this.Text.Trim(), this.Font).Width / 2);
+            Double widthOfASpace = g.MeasureString(" ", this.Font).Width;
+            String tmp = " ";
+            Double tmpWidth = 0;
+
+            while ((tmpWidth + widthOfASpace) < startingPoint)
+            {
+                tmp += " ";
+                tmpWidth += widthOfASpace;
+            }
+
+            this.Text = tmp + this.Text.Trim();
         }
 
         public void carregarCaptcha()
@@ -255,6 +273,7 @@ namespace ERP3
 
         private void frmConsultaReceita_Load(object sender, EventArgs e)
         {
+            tb_cnpj.Text = ConsultaCNPJ._cnpj;
             carregarCaptcha();
         }
 
@@ -277,33 +296,53 @@ namespace ERP3
             try
             {
                 this.Cursor = Cursors.WaitCursor;
-                string cnpj1 = tb_cnpj.Text;
-                cnpj1 = String.Format(@"{0:00\.000\.000\/0000\-00}", cnpj1);
-                string tmp = consulta.Consulta(cnpj1, tb_letras.Text);
+                string tmp1 = tb_cnpj.Text;
+                tmp1 = string.Format((@"{0:00\.000\.000\/0000\-00}"), Convert.ToInt64(tmp1));
+                string tmp = consulta.Consulta(tmp1, tb_letras.Text);
 
                 if (tmp.Length > 0)
                 {
                     empresa = new ConsultaCNPJ();
-                    empresa.Cnpj = tb_cnpj.Text;
+                    empresa.Cnpj = tmp1; 
                     empresa.RazaoSocial = RecuperaColunaValor(tmp, Coluna.RazaoSocial);
                     empresa.NomeFantasia = RecuperaColunaValor(tmp, Coluna.NomeFantasia);
+                    empresa.IncEstadual = RecuperaColunaValor(tmp, Coluna.NumeroDaInscricao);
                     empresa.Endereco = RecuperaColunaValor(tmp, Coluna.EnderecoLogradouro);
-                    empresa.Endereco += ", " + RecuperaColunaValor(tmp, Coluna.EnderecoNumero);
+                    //empresa.Endereco += ", " + RecuperaColunaValor(tmp, Coluna.EnderecoNumero);
                     empresa.Bairro = RecuperaColunaValor(tmp, Coluna.EnderecoBairro);
                     empresa.Cep = RecuperaColunaValor(tmp, Coluna.EnderecoCEP);
-                    empresa.Cnae = RecuperaColunaValor(tmp, Coluna.AtividadeEconomicaPrimaria);
-                    //empresa.Cidade = RecuperaColunaValor(tmp, Coluna.EnderecoCidade);
-                    //empresa.Estado = RecuperaColunaValor(tmp, Coluna.EnderecoEstado);
+                    empresa.Cidade = RecuperaColunaValor(tmp, Coluna.EnderecoCidade);
+                    empresa.Estado = RecuperaColunaValor(tmp, Coluna.EnderecoEstado);
+                    empresa.Numero = RecuperaColunaValor(tmp, Coluna.EnderecoNumero);
+                    empresa.AtividadeEconomicaPrimaria = RecuperaColunaValor(tmp, Coluna.AtividadeEconomicaPrimaria);
+                    empresa.NaturezaJuridica = RecuperaColunaValor(tmp, Coluna.NaturezaJuridica);
+
                     this.Close();
+                    return ;
+
+                    //return empresa;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 carregarCaptcha();
+                //return empresa;
             }
 
             this.Cursor = cursor;
+           // return empresa;
+        }
+
+        private void tb_cnpj_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != 8))
+
+            {
+
+                e.Handled = true;
+
+            }
         }
     }
 }

@@ -137,6 +137,7 @@ namespace NORD.DAL
                 while (leitor.Read())
                 {
                     //passo os valores para o objeto cliente 
+           
                     //que será retornado 
                     cliente.Id_cliente = Convert.ToInt32(leitor["id_cliente"].ToString());
                     cliente.Nome = leitor["nome"].ToString();

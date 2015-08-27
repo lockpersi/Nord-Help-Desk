@@ -72,7 +72,6 @@ namespace ERP3
             obj.AutoScroll = true;
             //this.Enabled = false;
             obj.ShowDialog();
-            
 
         }
 
